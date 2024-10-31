@@ -124,5 +124,5 @@ This project is licensed under the ISC License.
 
 ## Contact
 Your Name - ashishjukaria2001@gmail.com
-Project Link: [https://github.com/yourusername/CourseSelling](https://github.com/yourusername/CourseSelling)
+Project Link: [https://github.com/Ashish-jukaria/SkillUp]
 
