@@ -1,0 +1,220 @@
+body{
+    background: #F5F5F5	;
+    margin: 0px;
+ display: flex;
+ justify-content: center;
+ width: 100vw;
+ height: 100vh;
+}
+
+#adminform{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    top:10vh;
+}
+
+#adminusername{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: left;
+    width: 70%;
+    border-radius: 5px;
+}
+
+#adminpassword{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: left;
+    width: 70%;
+    border-radius: 5px;
+
+}
+
+/* singnin */
+#signinform{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    top:10vh;
+}
+
+
+#signinusername{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: left;
+    width: 70%;
+    border-radius: 5px;
+}
+
+#signinpassword{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: left;
+    width: 70%;
+    border-radius: 5px;
+
+
+
+}
+
+/* singnup */
+#signupform{
+    
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    top:10vh;
+}
+
+#signupusername{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: left;
+    width: 70%;
+    border-radius: 5px;
+}
+
+#signuppassword{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: left;
+    width: 70%;
+    border-radius: 5px;
+
+
+}
+
+
+
+
+button{
+    padding: 10px;
+    margin: 10px;
+    background: rgb(4, 175, 232);
+    font-size:medium;
+    font-weight: bold;
+    width: 75%;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button:hover{
+    background: #1746e1;
+}
+
+h1{  top: 5%;
+    position: absolute;
+    color: black;
+    
+}
+
+p{
+    position: absolute;
+    top:13%;
+    opacity: 0.6;
+
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+    font-style:oblique;
+}
+
+@media (max-width:1000px){
+    #signinform{
+        width: 80%;
+    }
+    
+    #signupform{
+        width: 80%;
+    }
+    #adminform{
+        width: 80%;
+    }
+}
+
+#signinusername:hover{
+    transform: scaleY(1.1);
+    box-shadow: 2px 2px ;
+}
+
+#signinpassword:hover{
+    transform: scaleY(1.1);
+    box-shadow: 2px 2px ;
+
+}
+
+#signinform:hover{
+    box-shadow: 10px 10px 5px lightblue;
+    cursor: pointer;
+}
+
+
+#signupusername:hover{
+    transform: scaleY(1.1);
+    box-shadow: 2px 2px ;
+}
+
+#signuppassword:hover{
+    transform: scaleY(1.1);
+    box-shadow: 2px 2px ;
+
+}
+
+#signupform:hover{
+    box-shadow: 10px 10px 5px lightblue;
+    cursor: pointer;
+}
+
+#adminusername:hover{
+    transform: scaleY(1.1);
+    box-shadow: 2px 2px ;
+}
+
+#adminpassword:hover{
+    transform: scaleY(1.1);
+    box-shadow: 2px 2px ;
+
+}
+
+#adminform:hover{
+    box-shadow: 10px 10px 5px lightblue;
+    cursor: pointer;
+}
+
+
+a{ margin-top: 5px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+
+
+}
+a:hover{
+    box-shadow: 2px 2px;
+    
+}

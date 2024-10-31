@@ -1,0 +1,114 @@
+body{
+    margin: 0px;
+}
+#main  {
+    display: grid;
+}
+#admin{
+    align-items: center;
+    display: flex;
+    background-color: #e25454;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#head{  
+    align-items: center;
+    padding: 10px;
+    grid-column: span 3;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+a{ 
+    display: contents;
+    color: black;
+}
+
+#buycourse{
+    border: solid black;
+    text-align: center;
+    font-size: 18px; 
+    margin-left: auto; 
+
+}
+
+#allcourse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#coursehead{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#datauser{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#datauser > div{
+    cursor: pointer;
+    margin: 40px;
+    text-align: center;
+    border: 1px solid rgb(98, 76, 168);
+    border-radius: 10px;
+    border-width: 5px;
+    align-items: center;
+    background-color: rgb(194, 214, 221);
+    transition: 5 sec;
+
+
+}
+#datauser > div:hover{
+    transform:scale3d(1.1,1.1,1.5)
+}
+
+#datauser > div div {
+    text-align: center;
+    font-weight: bolder;
+    margin: 5px;
+    align-items: center;
+
+    
+
+}
+#datauser > div div:nth-child(2){
+    width: 100%;
+    height: 200px;
+}
+#datauser>div div img{
+
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+
+}
+#datauser >div button{
+    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    background-color:antiquewhite;
+    width: 100%;
+    height: 60px;
+    transition: width 2 sec;
+}
+
+#datauser >div button:hover{
+ background-color:rgb(120, 207, 162);
+ width: 400px;
+ transform:scale3d(1.1,1,1.1)
+}
+
+
+
+
+
