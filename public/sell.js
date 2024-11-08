@@ -2,7 +2,7 @@ async function userSignup(){
     const username=document.getElementById('signupusername').value
     const password=document.getElementById('signuppassword').value
 
-    const response=await axios.post('http://localhost:3000/user/signup',{
+    const response=await axios.post('https://skillup-7dhp.onrender.com/user/signup',{
         "username":username,
         "password":password
     })
@@ -13,7 +13,7 @@ async function userSignup(){
 async function userSignin(){
     const username=document.getElementById('signinusername').value
     const password=document.getElementById('signinpassword').value
-    const response= await axios.post('http://localhost:3000/user/signin',{
+    const response= await axios.post('https://skillup-7dhp.onrender.com/user/signin',{
         "username":username,
         "password":password
     })
@@ -37,7 +37,7 @@ async function userSignin(){
 async function adminSignin(){
     const username=document.getElementById('adminusername').value
     const password=document.getElementById('adminpassword').value
-    const response= await axios.post('http://localhost:3000/admin/signin',{
+    const response= await axios.post('https://skillup-7dhp.onrender.com/admin/signin',{
         "username":username,
         "password":password
     })

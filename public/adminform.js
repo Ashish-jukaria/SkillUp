@@ -12,7 +12,7 @@ async function addCourse() {
     else{
         pub=false
     }
-    const res=await axios.post('http://localhost:3000/admin/courses',{
+    const res=await axios.post('https://skillup-7dhp.onrender.com/admin/courses',{
         title: title,
         description: des,
         price: parseInt(price),

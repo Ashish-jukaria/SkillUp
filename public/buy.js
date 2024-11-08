@@ -1,7 +1,7 @@
 async function getPurchasedCourses(){
 
     try{
-    const response=await axios.get('http://localhost:3000/user/purchaseCourses',{
+    const response=await axios.get('https://skillup-7dhp.onrender.com/user/purchaseCourses',{
         "headers":{"token":localStorage.getItem("token")}
     })
 

@@ -2,7 +2,7 @@ async function getuserCourses(){
   token=localStorage.getItem("token")
 
   try{
-  res=await axios.get('http://localhost:3000/user/courses',{
+  res=await axios.get('https://skillup-7dhp.onrender.com/courses',{
     "headers":{
         "token":token
     }
@@ -66,7 +66,7 @@ getuserCourses()
 async function buyCourse(id){
 
 try{
-const resposne =await axios.post(`http://localhost:3000/user/courses/${id}`,{},{
+const resposne =await axios.post(`https://skillup-7dhp.onrender.com/user/courses/${id}`,{},{
     "headers":{
         "token":localStorage.getItem("token")
     }

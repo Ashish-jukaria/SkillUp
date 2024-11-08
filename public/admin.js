@@ -4,7 +4,7 @@ async function getCourses(){
 
     try{
     
-    response=await axios.get('http://localhost:3000/admin/courses',{
+    response=await axios.get('https://skillup-7dhp.onrender.com/admin/courses',{
         "headers":{
             "token":token 
         }

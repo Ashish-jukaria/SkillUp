@@ -4,6 +4,7 @@ dotenv.config()
 JWT_SECRET=process.env.JWT_SECRET
 
 function Auth(req,res,next){
+    console.log(req.url)
     token=req.headers.token
 
     try{

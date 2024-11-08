@@ -6,6 +6,7 @@ const bcrypt=require('bcrypt')
 const mongoose = require("mongoose");
 const dotenv=require('dotenv')
 const { z, ZodError } =require("zod");
+const  path=require('path')
 const {
   AdminModel,
   UserModel,
@@ -26,6 +27,8 @@ app = express();
 //middlewares on top
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
+
 
 //admin
 const usernameschema=z.string().min(5,{message:"Username Must be 5 chat atleast"}).toLowerCase()
@@ -45,6 +48,10 @@ app.post("/admin/signup", async (req, res) => {
     res.send("Duplicate Username");
   }
 });
+
+app.get('/',(req,res)=>{
+  res.sendFile(path.join(__dirname, "public", "sell.html"));
+})
 
 app.post("/admin/signin", async (req, res) => {
   try{
@@ -126,7 +133,7 @@ catch(e){
 });
 
 //API Who need AUTH First
-app.use(Auth);
+app.use(Auth)
 
 // {
 //     "title": "course title",
@@ -254,7 +261,7 @@ app.get("/user/purchaseCourses", async (req, res) => {
     courses: user_course,
   });
 });
-port=process.env.PORT
+port=process.env.PORT||3000
 app.listen(port, () => {
   console.log("server is running hola");
 });
