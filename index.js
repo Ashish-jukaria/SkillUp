@@ -11,6 +11,7 @@ const {
   UserModel,
   CoursesModel,
   UserCourseModel,
+  
 } = require("./db");
 const { Auth, JWT_SECRET } = require("./auth");
 const ObjectId = require("mongodb").ObjectId;
@@ -253,7 +254,7 @@ app.get("/user/purchaseCourses", async (req, res) => {
     courses: user_course,
   });
 });
-
-app.listen(3000, () => {
+port=process.env.PORT
+app.listen(port, () => {
   console.log("server is running hola");
 });
