@@ -2,7 +2,7 @@ async function getuserCourses(){
   token=localStorage.getItem("token")
 
   try{
-  res=await axios.get('https://skillup-7dhp.onrender.com/courses',{
+  res=await axios.get('https://skillup-7dhp.onrender.com/user/courses',{
     "headers":{
         "token":token
     }
