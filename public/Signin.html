@@ -20,8 +20,9 @@
         <h1>
             Welcome Back
         </h1>
-        <input id="signinusername" type="text" placeholder="Enter  your name">
-        <input id="signinpassword" type="text" placeholder="Enter your Password">
+        <span id="signinerror" style="display: none; color: red;">Wrong Credential </span>
+        <input id="signinusername" onfocus="errorHandle('signinerror')" type="text" placeholder="Enter  your name">
+        <input id="signinpassword" onfocus="errorHandle('signinerror')" type="text" placeholder="Enter your Password">
         <button id="signinbutton" onclick="userSignin()">Submit</button>
         
         

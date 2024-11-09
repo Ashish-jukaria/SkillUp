@@ -37,8 +37,9 @@ async function getuserCourses(){
             divELtitle.innerHTML="Title"+": "+title
 
             divEl.append(
+              divELimage,
+
                 divELtitle,
-                divELimage,
                 divELdes,
 
                 divELprice,
@@ -72,7 +73,7 @@ const resposne =await axios.post(`https://skillup-7dhp.onrender.com/user/courses
     }
 })
 
-console.log(resposne)
+alert('Succesfully Buyed the Course')
 }
 catch(e){
     alert(e.message)

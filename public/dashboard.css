@@ -1,14 +1,25 @@
+body{
+    margin: 0;
+}
 #admin{
     display: flex;
-    justify-content: space-between;
-    background-color: #e25454;
+    z-index: 9999;
+    position: sticky;
+    top: 0;
+    width:95%;
+    left: 10px;
+    background-color: #f1e8e8;
+    background: rgba(225, 227, 225, 0.5);    
     padding: 20px;
+    justify-content: center;
     cursor: pointer;
+    align-items: center;
     text-align: center;
 
 }
 #head{  
-    margin-left: 650px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 20px;
     font-weight: bolder;
 
@@ -21,9 +32,13 @@ a{
 }
 
 #addcourse{
+    border-bottom: solid 2px transparent;
     text-align: center;
     font-size: 18px;  
 
+}
+#addcourse:hover{
+ border-color: black;
 }
 
 #allcourse{
@@ -34,7 +49,6 @@ a{
 
 #coursehead{
     font-size: 20px;
-    margin: 10px;
 }
 
 #data{
@@ -43,24 +57,29 @@ a{
 }
 
 #data > div{
-    margin: 40px;
+    margin: 20px;
     text-align: center;
-    border: 1px solid rgb(141, 208, 6);
+    background: #f8f6f6;
     border-width: 2px;
 
+    cursor: pointer;
     flex :30 0 30%;
 
+
+}
+#data> div:hover{
+    box-shadow: 2px 2px black;
 
 }
 
 #data > div div {
     text-align: center;
-    height: 50px;
     font-weight: bolder;
     
 
 }
-#data > div div:nth-child(2){
+
+#data > div div:nth-child(1){
     width: 100%;
     height: 300px;
 }
@@ -68,15 +87,20 @@ a{
 
     width: 100%;
     height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 
 }
 #data >div button{
-    margin-top: 10px;
+    margin: 5px;
     align-items: center;
     cursor: pointer;
     font-size: 16px;
-    background-color:antiquewhite;
+    width: 50%;
+    background-color:rgb(228, 229, 244);
+}
+
+#data >div button:hover{
+    background: #80a3db;
 }
 
 

@@ -7,7 +7,7 @@ body{
 #admin{
     align-items: center;
     display: flex;
-    background-color: #e25454;
+    background-color: #f8f5f5;
     padding: 20px;
     cursor: pointer;
     text-align: center;
@@ -30,11 +30,14 @@ a{
 }
 
 #buycourse{
-    border: solid black;
+    border-bottom: solid 2px transparent;
     text-align: center;
     font-size: 18px; 
     margin-left: auto; 
 
+}
+#buycourse:hover{
+    border-color: black;
 }
 
 #allcourse{
@@ -46,7 +49,6 @@ a{
 #coursehead{
     font-weight: bold;
     font-size: 20px;
-    margin: 10px;
 }
 
 #datauser{
@@ -56,39 +58,35 @@ a{
 
 #datauser > div{
     cursor: pointer;
-    margin: 40px;
+    margin: 20px;
     text-align: center;
-    border: 1px solid rgb(98, 76, 168);
-    border-radius: 10px;
-    border-width: 5px;
     align-items: center;
-    background-color: rgb(194, 214, 221);
+    background-color: rgb(248, 251, 252);
     transition: 5 sec;
 
 
 }
 #datauser > div:hover{
-    transform:scale3d(1.1,1.1,1.5)
+    box-shadow: 2px 2px black;
 }
 
 #datauser > div div {
     text-align: center;
     font-weight: bolder;
-    margin: 5px;
     align-items: center;
 
     
 
 }
-#datauser > div div:nth-child(2){
+#datauser > div div:nth-child(1){
     width: 100%;
-    height: 200px;
+    height: 300px;
 }
 #datauser>div div img{
 
-    width: 80%;
+    width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 
 }
 #datauser >div button{
@@ -96,16 +94,14 @@ a{
     align-items: center;
     cursor: pointer;
     font-size: 16px;
-    background-color:antiquewhite;
+    background-color:rgb(160, 224, 245);
     width: 100%;
     height: 60px;
     transition: width 2 sec;
 }
 
 #datauser >div button:hover{
- background-color:rgb(120, 207, 162);
- width: 400px;
- transform:scale3d(1.1,1,1.1)
+ background-color:rgb(113, 217, 243);
 }
 
 

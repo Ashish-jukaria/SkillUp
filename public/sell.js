@@ -1,16 +1,35 @@
 async function userSignup(){
     const username=document.getElementById('signupusername').value
     const password=document.getElementById('signuppassword').value
+    try{
+        const response=await axios.post('https://skillup-7dhp.onrender.com/user/signup',{
+            "username":username,
+            "password":password
+        })
+        window.location.href='./sell.html'
 
-    const response=await axios.post('https://skillup-7dhp.onrender.com/user/signup',{
-        "username":username,
-        "password":password
-    })
+    }
+    catch(e){
+        if (e.response.status==409){
+            ele=document.getElementById('signupzoderror')
+            ele.innerHTML="Username Taken"
+            ele.style.display="block"
 
-    console.log(response)
+        }
+        if (e.response.status==400){
+            console.log(e)
+            ele=document.getElementById('signupzoderror')
+            ele.innerHTML=e.response.data.message
+            ele.style.display='block'
+        }
+
+
+    }
+    
 }
 
 async function userSignin(){
+    try{
     const username=document.getElementById('signinusername').value
     const password=document.getElementById('signinpassword').value
     const response= await axios.post('https://skillup-7dhp.onrender.com/user/signin',{
@@ -27,8 +46,17 @@ async function userSignin(){
     }
 
     else{
-        alert('Wrong Credentials')
+        ele= document.getElementById('signinerror')
+        ele.style.display='block'
+        
     }
+}
+catch(e){
+
+    ele= document.getElementById('signinerror')
+    ele.style.display='block'
+
+}
 
 
 }
@@ -53,5 +81,11 @@ async function adminSignin(){
     }
 
 
+}
+
+function errorHandle(id){
+    console.log(id)
+    ele=document.getElementById(id)
+    ele.style.display='none'
 }
 

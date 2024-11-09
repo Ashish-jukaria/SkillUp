@@ -31,8 +31,8 @@ async function getPurchasedCourses(){
             divELtitle.innerHTML="Title"+": "+title
 
             divEl.append(
-                divELtitle,
                 divELimage,
+                divELtitle,
                 divELdes,
                 divELprice,
                 )

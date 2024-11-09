@@ -81,25 +81,34 @@ app.post("/user/signup", async (req, res) => {
   
   try {
   username = usernameschema.parse(req.body.username);
+  user_is=await UserModel.exists({
+    name: username
+  })
+  if(user_is){
+    return res.status(409).send("Username Already Taken");
+  }
+
   password = passwordschema.parse(req.body.password);
   hash_password=await bcrypt.hash(password,5)
-    await UserModel.create({
+    const user=await UserModel.create({
       name: username,
       password: hash_password,
     });
-
-    res.send("User Created");
+    if (user){
+      return res.sendStatus(200);
+    }
+  
   } catch (e) {
     console.log(e.message)
 
     if (e instanceof ZodError){
-      res.status(400).json({
+      return res.status(400).json({
         "message":e.errors.map(err=>err.message)
 
       })
     }
     else{
-      res.json({
+      return res.status(400).json({
         "message":"Something Went Wrong Please Try again"
       });
     }
@@ -115,7 +124,7 @@ app.post("/user/signin", async (req, res) => {
   user = await UserModel.findOne({
     name: username,
   });
-  verified_user=bcrypt.compare(password,user.password)
+  verified_user=await bcrypt.compare(password,user.password)
   if (verified_user) {
     const token = jwt.sign({ id: user._id.toString() }, JWT_SECRET);
 
@@ -123,11 +132,11 @@ app.post("/user/signin", async (req, res) => {
       token: token,
     });
   } else {
-    res.send("Wrong Credintials");
+    res.status(400).send("Wrong Credintials");
   }
 }
 catch(e){
-  res.send("Wrong Credintials");
+  res.status(400).send("Wrong Credintials");
 
 }
 });

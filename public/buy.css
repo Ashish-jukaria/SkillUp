@@ -8,8 +8,8 @@ body{
 }
 #head{  
     grid-column: span 2;
-    background-color:violet;
-    font-size: 20px;
+    background-color:rgb(241, 241, 241);
+    font-size: 10px;
     font-weight: bolder;
     align-items: center;
     text-align: center;
@@ -30,29 +30,25 @@ body{
 }
 
 #yourcourses > div{
-    border:  solid black;
+    background: #ece2e2;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    padding-top: 30px;
     margin: 10px;
     
 }
 
 #yourcourses >div div{
-    padding: 10px;
     font-weight: bold;
-    margin: 10px;
 
 }
 
 #yourcourses div div img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-#yourcourses div :nth-child(2){
-    width: 90%;
-    height: 200px;
+#yourcourses div :nth-child(1){
+    width: 100%;
+    height: 300px;
 }

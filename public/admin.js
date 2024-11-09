@@ -41,8 +41,9 @@ async function getCourses(){
             divELtitle.innerHTML="Title"+": "+title
 
             divEl.append(
-                divELtitle,
                 divELimage,
+                divELtitle,
+
                 divELdes,
                 divELprice,
                 divedit
@@ -73,13 +74,19 @@ async function editCourse(id,title,desciption,image,price) {
     ele=document.getElementById('divid'+id)
     ele.innerHTML=''
 
+    ele.setAttribute('style','background:#72A0C1; display:flex; flex-direction:column; justify-content:center; align-items:center; height:500px text-align:left' )
+
 
     divELtitle=document.createElement('div')
     inputtitle=document.createElement('input')
-    divELtitle.innerHTML="Title"+": "
+    divELtitle.innerHTML="Title"+":"+"<br>"
     inputtitle.setAttribute("value",title)
+    inputtitle.setAttribute("type","text")
     inputtitle.setAttribute("id","title"+id)
     divELtitle.appendChild(inputtitle)
+
+    divELtitle.setAttribute('style','margin:10px; height:40px; width:100%')
+
 
     divELdes=document.createElement('div')
     inputdes=document.createElement('input')
@@ -87,6 +94,8 @@ async function editCourse(id,title,desciption,image,price) {
     inputdes.setAttribute("id","des"+id)
     divELdes.innerHTML="Description"+": "
     divELdes.appendChild(inputdes)
+    inputdes.setAttribute("style","margin:10px;width:90%")
+
 
     divELimage=document.createElement('div')
     inputimage=document.createElement('input')
@@ -94,6 +103,8 @@ async function editCourse(id,title,desciption,image,price) {
     inputimage.setAttribute("id","image"+id)
     divELimage.innerHTML="image"+": "
     divELimage.appendChild(inputimage)
+    inputimage.setAttribute("style","margin:10px; width:90%")
+
 
     divELprice=document.createElement('div')
     inputprice=document.createElement('input')
@@ -101,6 +112,8 @@ async function editCourse(id,title,desciption,image,price) {
     inputprice.setAttribute("id","price"+id)
     inputprice.setAttribute("type","number")
     divELprice.innerHTML="Price"+": "
+    inputprice.setAttribute("style","margin:10px;width:90%")
+
 
     divELprice.appendChild(inputprice)
 
@@ -108,6 +121,8 @@ async function editCourse(id,title,desciption,image,price) {
     
     divselect=document.createElement('select')
     divselect.setAttribute('id',"pub"+id)
+    divselect.setAttribute("style","margin:10px;width:90%")
+
     divoption1=document.createElement('option')
     divoption2=document.createElement('option')
 
