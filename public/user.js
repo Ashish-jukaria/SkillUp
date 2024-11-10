@@ -84,5 +84,6 @@ catch(e){
 }
 
 function handleRoute(){
-  window.location.href('./sell.html')
+  window.location.href='./sell.html'
+
 }
