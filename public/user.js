@@ -82,3 +82,7 @@ catch(e){
 
 
 }
+
+function handleRoute(){
+  window.location.href('./sell.html')
+}
