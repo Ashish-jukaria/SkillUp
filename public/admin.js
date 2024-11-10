@@ -181,3 +181,7 @@ async function submitEditedCourse(id) {
     getCourses()
     
 }
+
+function routehandle(){
+    window.location.href='./sell.html'
+}

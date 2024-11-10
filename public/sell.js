@@ -89,3 +89,35 @@ function errorHandle(id){
     ele.style.display='none'
 }
 
+
+function navbarDashboard(){
+    token=localStorage.getItem("token")
+    if(token){
+        ele=document.getElementById('links')
+
+        div=document.createElement('div')
+        div1=document.createElement('div')
+
+
+        a=document.createElement('a')
+        b=document.createElement('a')
+
+        a.setAttribute('href','userdashboard.html')
+        a.innerHTML='UserDashboard'
+        div.appendChild(a)
+        
+        b.setAttribute('href','admindashboard.html')
+        b.innerHTML='AdminDashboard'
+        div1.appendChild(b)
+
+     
+     
+        
+        ele.appendChild(div)
+        ele.appendChild(div1)
+    }
+
+}
+
+navbarDashboard()
+

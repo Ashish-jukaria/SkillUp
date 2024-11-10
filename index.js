@@ -14,7 +14,7 @@ const {
   UserCourseModel,
   
 } = require("./db");
-const { Auth, JWT_SECRET } = require("./auth");
+const { Auth, JWT_SECRET,JWT_ADMIN_SECRET,AdminAuth } = require("./auth");
 const ObjectId = require("mongodb").ObjectId;
 dotenv.config()
 //db connections
@@ -63,7 +63,7 @@ app.post("/admin/signin", async (req, res) => {
   verified_user=await bcrypt.compare(password,user.password)
 
   if (verified_user) {
-    const token = jwt.sign({ id: user._id.toString()}, JWT_SECRET);
+    const token = jwt.sign({ id: user._id.toString()}, JWT_ADMIN_SECRET);
 
     res.json({
       token: token,
@@ -142,7 +142,6 @@ catch(e){
 });
 
 //API Who need AUTH First
-app.use(Auth)
 
 // {
 //     "title": "course title",
@@ -152,7 +151,7 @@ app.use(Auth)
 //     "published": true
 //   }
 
-app.post("/admin/courses", async (req, res) => {
+app.post("/admin/courses", AdminAuth,async (req, res) => {
   const id = req.id;
   const { title, description, price, imageLink, published } = req.body;
   try {
@@ -172,7 +171,7 @@ app.post("/admin/courses", async (req, res) => {
   }
 });
 
-app.put("/admin/courses/:id", async (req, res) => {
+app.put("/admin/courses/:id", AdminAuth,async (req, res) => {
   const id = req.id;
   const course_id = req.params.id;
   const { title, description, price, imageLink, published } = req.body;
@@ -198,7 +197,7 @@ app.put("/admin/courses/:id", async (req, res) => {
   }
 });
 
-app.get("/admin/courses", async (req, res) => {
+app.get("/admin/courses",AdminAuth, async (req, res) => {
   courses = await CoursesModel.find({
     admin_id:req.id
   });
@@ -209,8 +208,7 @@ app.get("/admin/courses", async (req, res) => {
 });
 
 //users api
-
-app.get("/user/courses", async (req, res) => {
+app.get("/user/courses",Auth, async (req, res) => {
   courses = await CoursesModel.find({
     published: true,
   });
@@ -220,7 +218,7 @@ app.get("/user/courses", async (req, res) => {
   });
 });
 
-app.post("/user/courses/:id", async (req, res) => {
+app.post("/user/courses/:id", Auth,async (req, res) => {
   const course_id = req.params.id;
   const user_id = req.id;
   console.log(typeof user_id);
@@ -263,7 +261,7 @@ app.post("/user/courses/:id", async (req, res) => {
   }
 });
 
-app.get("/user/purchaseCourses", async (req, res) => {
+app.get("/user/purchaseCourses",Auth, async (req, res) => {
   const user_id = req.id;
   const user_course = await UserCourseModel.find({ user_id: user_id });
   res.json({
