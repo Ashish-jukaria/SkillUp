@@ -4,6 +4,7 @@ body{
 #main  {
     display: grid;
 }
+
 #admin{
     align-items: center;
     display: flex;
@@ -65,6 +66,11 @@ a{
     transition: 5 sec;
 
 
+}
+@media screen and ( max-width: 600px) {
+    #datauser{
+        grid-template-columns: 1fr;
+    }
 }
 #datauser > div:hover{
     box-shadow: 2px 2px black;

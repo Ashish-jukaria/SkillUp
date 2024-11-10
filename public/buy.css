@@ -28,6 +28,11 @@ body{
 
     
 }
+@media screen and ( max-width: 600px) {
+    #yourcourses{
+        grid-template-columns: 1fr;
+    }
+}
 
 #yourcourses > div{
     background: #ece2e2;
